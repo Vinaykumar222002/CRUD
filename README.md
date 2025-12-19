@@ -64,6 +64,8 @@ A full-stack user management system built with **FastAPI** and **PostgreSQL**, f
   <img width="1901" height="913" alt="image" src="https://github.com/user-attachments/assets/bc06bc08-d48f-4875-97c0-bd22e57b54be" />
 * Highlighted users after bulk upload
   <img width="1906" height="896" alt="image" src="https://github.com/user-attachments/assets/e8137b5a-6efe-49f0-86bd-614ec16c4a19" />
+  <img width="1887" height="912" alt="image" src="https://github.com/user-attachments/assets/4a668b5e-56a8-4747-8fd7-9cfcff275e6f" />
+
 * Users in Table and list format with sorting, pagination, filter, edit, delete, download
   <img width="1892" height="922" alt="image" src="https://github.com/user-attachments/assets/93527e69-ef14-4b40-9856-ff1f69223ad6" />
   <img width="1897" height="915" alt="image" src="https://github.com/user-attachments/assets/7fc5f8fe-5670-4970-b812-d7b98edf3b20" />
