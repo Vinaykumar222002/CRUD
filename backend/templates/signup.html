@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Signup</title>
+  <link rel="stylesheet" href="/static/auth.css" />
+</head>
+<body>
+  <div class="top-header">
+    <nav class="menu">
+      <div class="logo">CRUD</div>
+    </nav>
+  </div>
+  <div class="page">
+    <div class="card">
+      {% if request.query_params.get('msg') %}
+        <div class="msg">{{ request.query_params.get('msg') }}</div>
+      {% endif %}
+      <h2>Create Account</h2>
+      <form method="post" action="/signup">
+        <label>Email</label>
+        <input type="email" name="email" required />
+        <label>Password</label>
+        <input type="password" name="password" required />
+        <button type="submit">Sign up</button>
+      </form>
+      <p class="switch">Already have an account? <a href="/login">Login</a></p>
+    </div>
+  </div>
+</body>
+</html>

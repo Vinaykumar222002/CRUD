@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <link rel="stylesheet" href="/static/user.css">
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav class="menu">
+        <div class="logo">CRUD</div>
+        <div class="menu-right">
+            <div class="menu-links">
+                <a href="/home" class="menu-item">ADD</a>
+                <a href="/users_table/" class="menu-item">VIEW</a>
+                <a href="/users_table/" class="menu-item">EDIT</a>
+                <a href="/users_table/" class="menu-item">DELETE</a>
+                <a href="/users/" class="menu-item">LIST</a>
+            </div>
+            <form action="/users/" method="get" class="search-form">
+                <input type="text" name="q" placeholder="Search users..." value="{{ q }}">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Users</h1>
+
+        <!-- User Grid -->
+        <div class="user-grid">
+            {% for user in users %}
+            <div class="user-card {% if user.id in highlighted_ids %}highlighted{% endif %}">
+                <h3>
+                    {{ user.name }}
+                    {% if user.id in highlighted_ids %}
+                        <span class="badge">New</span>
+                    {% endif %}
+                </h3>
+                
+                {% if user.image_path %}
+                    <img src="/{{ user.image_path }}" alt="User Image" width="120">
+                {% endif %}
+                
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Age:</strong> {{ user.age }}</p>
+                <p><strong>City:</strong> {{ user.city }}</p>
+                <p><strong>Gender:</strong> {{ user.gender }}</p>
+                <p><strong>Skills:</strong> {{ user.skills }}</p>
+
+                <div class="card-actions">
+                    <a href="/edit_user/{{ user.id }}" class="btn">
+                        <img src="{{ url_for('static', path='images/edit.png') }}" alt="Edit" style="width:30px;height:30px;"/> 
+                    </a>
+                    <a href="/delete_user/{{ user.id }}" class="btn">
+                        <img src="{{ url_for('static', path='images/delete.png') }}" alt="Delete" style="width:30px;height:30px;">
+                    </a>
+                    <a class="btn" href="/download_user_pdf/{{ user.id }}">
+                        <img src="{{ url_for('static', path='images/download.png') }}" alt="Download" style="width:20px;height:30px;">
+                    </a>
+                    {% if user.pdf_path %}
+                        <a class="btn-view" href="/{{ user.pdf_path }}" target="_blank">View PDF</a><br>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination" style="text-align:center; margin-top: 20px;">
+            {% if page > 1 %}
+                <a href="?page={{ page - 1 }}&q={{ q }}">Previous</a>
+            {% endif %}
+
+            {% for p in range(1, total_pages + 1) %}
+                {% if p == page %}
+                    <span style="font-weight:bold;">{{ p }}</span>
+                {% else %}
+                    <a href="?page={{ p }}&q={{ q }}">{{ p }}</a>
+                {% endif %}
+            {% endfor %}
+
+            {% if page < total_pages %}
+                <a href="?page={{ page + 1 }}&q={{ q }}">Next</a>
+            {% endif %}
+
+            <a href="/users/" style="margin-left:20px; color:red; font-weight:bold;">Clear</a>
+        </div><br><br><br>
+
+        <a class="back-link" href="/">Add New User</a>
+    </div>
+</body>
+</html>

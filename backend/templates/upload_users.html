@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bulk Upload Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/upload_users.css">
+</head>
+<body>
+    <div class="top-header">
+        <nav class="menu">
+            <div class="logo">CRUD</div>
+            <div class="menu-links">
+                <a href="/home" class="menu-item">ADD</a>
+                <a href="/users_table/" class="menu-item">VIEW</a>
+                <a href="/users_table/" class="menu-item">EDIT</a>
+                <a href="/users_table/" class="menu-item">DELETE</a>
+                <a href="/login?msg=Logged out" class="menu-item">LOGOUT</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="upload-card">
+        <h2>Bulk Upload Users</h2>
+        <p class="info-text">Upload a CSV file containing user details (name, email, age, city, gender, skills).</p>
+
+        <form action="/upload_users_csv" method="post" enctype="multipart/form-data">
+            <label for="csv">Choose CSV File:</label>
+            <input type="file" name="file" id="csv" accept=".csv" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <div class="note">
+            <p><strong>Note:</strong> Required headers:</p>
+            <code>name,email,age,city,gender,skills</code>
+        </div>
+    </div>
+</body>
+</html>

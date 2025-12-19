@@ -1,0 +1,205 @@
+body {
+    margin: 0;
+    padding:0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color:#82de9b;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.user-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.user-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+    opacity: 0.9;
+}
+
+.user-card:hover {
+    transform: scale(1.02);
+}
+
+.user-card h3 {
+    margin: 0 0 10px;
+    color:black;
+    font-size: 25px;
+}
+
+.user-card p {
+    margin: 5px 0;
+    color:black;
+}
+
+.btn-view {
+  color: white;
+  text-decoration: none;
+  background: #1ca74a;
+  border-radius: 5px;
+  padding: 5px 5px;
+  margin-left: 10px;
+}
+
+.btn-view:hover {
+    background-color: black;
+}
+
+.btn {
+  border: none;
+  text-decoration: none;
+}
+
+.btn img {
+    margin:10px;
+}
+
+.card-actions
+{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.user-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius:4px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color:white;
+    text-decoration: none;
+    background-color:black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+
+
+/* FLEX LAYOUT FOR NAVIGATION */
+.menu {
+    display: flex;
+    justify-content: space-between; /* logo left, rest right */
+    align-items: center;
+    width: 100%;
+    padding:15px 0px;
+    margin: 0;
+    position: sticky;
+    top:0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #82de9b;
+}
+
+/* LOGO STYLING */
+.logo {
+    font-size:50px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    margin-left: 25px;
+    letter-spacing:10px;
+}
+
+/* RIGHT SIDE CONTAINER FOR BUTTONS + SEARCH */
+.menu-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* MENU BUTTON GROUP */
+.menu-links {
+    display: flex;
+    gap: 25px;
+}
+
+/* INDIVIDUAL MENU BUTTONS */
+.menu-item {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 0;
+    transition: 0.2s;
+    letter-spacing:3px;
+}
+
+.menu-item:hover {
+    transform: translateY(-2px);
+    text-decoration: underline;
+}
+
+/* SEARCH FORM */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-form input {
+    padding: 8px 12px;
+    width: 180px;
+    border: 1px solid #000;
+    border-radius: 6px;
+}
+
+.search-form button {
+    padding: 8px 16px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: gray;
+}
+
+
+.pagination a {
+    margin: 0 5px;
+    padding: 6px 12px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.pagination span {
+    margin: 0 5px;
+    padding: 6px 12px;
+    background-color: orange;
+    color: black;
+    border-radius: 4px;
+}
+.pagination a:hover {
+    background-color: gray;
+}

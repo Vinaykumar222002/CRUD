@@ -1,0 +1,8 @@
+Name: Vinay kumar
+Email: vinay@gmail.com
+Age: 22
+City: palachuru
+Gender: Male
+Skills: Python,HTML,CSS
+Image Path: uploads\IMG_20240329_003533.jpg
+PDF Path: uploads\vinay kumar batta resume.pdf

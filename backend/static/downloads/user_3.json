@@ -1,0 +1,11 @@
+{
+    "id": 3,
+    "name": "Vinay kumar",
+    "email": "vinay@gmail.com",
+    "age": 22,
+    "city": "palachuru",
+    "gender": "Male",
+    "skills": "Python,HTML,CSS",
+    "image_path": "static/uploads\\IMG_20240329_003533.jpg",
+    "pdf_path": "static/uploads\\vinay kumar batta resume.pdf"
+}

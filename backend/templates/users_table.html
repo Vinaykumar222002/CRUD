@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <link rel="stylesheet" href="/static/users_table.css">
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="menu">
+        <div class="logo">CRUD</div>
+        <div class="menu-right">
+            <div class="menu-links">
+                <a href="/home" class="menu-item">ADD</a>
+                <a href="/users_table/" class="menu-item">VIEW</a>
+                <a href="/users_table/" class="menu-item">EDIT</a>
+                <a href="/users_table/" class="menu-item">DELETE</a>
+                <a href="/users/" class="menu-item">LIST</a>
+            </div>
+            <form action="/users_table/" method="get" class="search-form">
+                <input type="text" name="q" placeholder="Search users..." value="{{ q }}">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    {% if new_users_count > 0 %}
+    <div class="banner">
+        {{ new_users_count }} users added successfully from CSV upload.
+        <a href="/users_table" class="btn-small">Show All Users</a>
+    </div>
+    {% endif %}
+    
+    {% if request.query_params.get('msg') %}
+        <div class="banner">
+            <p style="color: red; font-weight: bold;">
+                {{ request.query_params.get('msg') }}
+            </p>
+        </div>
+    {% endif %}
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Gender</th>
+                <th>Skills</th>
+                <th>PDF</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr class="{% if user.id in highlighted_ids %}highlighted{% endif %}">
+                <td>
+                    {{ user.id }}
+                    {% if user.id in highlighted_ids %}
+                        <span class="badge">New</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if user.image_path %}
+                        <img src="/{{ user.image_path }}" alt="User Image">
+                    {% else %}
+                        No Image
+                    {% endif %}
+                </td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.age }}</td>
+                <td>{{ user.city }}</td>
+                <td>{{ user.gender }}</td>
+                <td>{{ user.skills }}</td>
+                <td>
+                    {% if user.pdf_path %}
+                        <a href="/{{ user.pdf_path }}" target="_blank" class="pdf-link">View PDF</a>
+                    {% else %}
+                        <p style="color:black;font-weight: bold;">No PDF</p>
+                    {% endif %}
+                </td>
+                <td class="action-links">
+                    <a href="/edit_user/{{ user.id }}" class="btn">
+                        <img src="{{ url_for('static', path='images/edit.png') }}" alt="Edit"/>
+                    </a>
+                    <a href="/delete_user/{{ user.id }}" class="btn">
+                        <img src="{{ url_for('static', path='images/delete.png') }}" alt="Delete"/>
+                    </a>
+                    <a href="/download_user_pdf/{{ user.id }}" class="btn">
+                        <img src="{{ url_for('static', path='images/download.png') }}" alt="Download"/>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Pagination Controls -->
+    <div class="pagination" style="text-align:center; margin-top: 20px;">
+        {% if page > 1 %}
+            <a href="?page={{ page - 1 }}&q={{ q }}">Previous</a>
+        {% endif %}
+
+        {% for p in range(1, total_pages + 1) %}
+            {% if p == page %}
+                <span style="font-weight:bold;">{{ p }}</span>
+            {% else %}
+                <a href="?page={{ p }}&q={{ q }}">{{ p }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if page < total_pages %}
+            <a href="?page={{ page + 1 }}&q={{ q }}">Next</a>
+        {% endif %}
+
+        <a href="/users_table/" style="margin-left:20px; color:red; font-weight:bold;">Clear</a>
+    </div>
+
+    <a class="back-link" href="/">Add New User</a>
+</body>
+</html>

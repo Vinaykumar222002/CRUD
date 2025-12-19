@@ -1,0 +1,154 @@
+
+
+.upload-card {
+    max-width: 500px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top:50px;
+}
+
+h2 {
+    text-align: center;
+    color: #1ca74a;
+    margin-bottom: 10px;
+}
+
+.info-text {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+}
+
+label {
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+}
+
+input[type="file"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f9f9f9;
+    font-size: 14px;
+    width: 100%;
+}
+
+button {
+    background: #1ca74a;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #148c3a;
+}
+
+.note {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #444;
+    background: #f1f1f1;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+code {
+    display: block;
+    background: #eafbe7;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #1ca74a;
+    margin-top: 5px;
+}
+
+/* ✅ Mobile support */
+@media (max-width: 600px) {
+    .upload-card {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    button,
+    input[type="file"] {
+        width: 100%;
+    }
+}
+
+
+
+.top-header {
+    width:100%;
+    padding: 15px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #82de9b;
+}
+
+
+
+.menu {
+    display: flex;
+    justify-content: space-between; /* logo left, links right */
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-size: 50px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    gap: 20px;
+    letter-spacing: 10px;
+    margin-left: 25px;
+}
+
+.menu-links {
+    display: flex;
+    gap: 50px;
+}
+
+
+/* MENU BUTTONS */
+.menu-item {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 0;
+    transition: 0.2s;
+    letter-spacing: 3px;
+}
+
+.menu-item:hover {
+    transform: translateY(-2px);
+    text-decoration: underline;
+}
+
+body {
+    background: #82de9b;
+    margin: 0;
+    padding:0;
+    font-family: Arial, sans-serif;
+}

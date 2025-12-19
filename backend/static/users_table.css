@@ -1,0 +1,211 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 2px solid black;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+    background-color:white;
+    opacity: 0.9;
+    color: black;
+}
+th {
+    background-color:black;
+    color:white
+
+}
+td img {
+    width: 100px;
+    height:100px;
+    object-fit: cover;
+    border-radius:2px;
+}
+
+td.no-image {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+.pdf-link {
+    color:black;
+    font-weight: bold;
+    
+}
+
+
+
+/* FLEX LAYOUT FOR NAVIGATION */
+
+
+/* FLEX LAYOUT FOR NAVIGATION */
+.menu {
+    display: flex;
+    justify-content: space-between; /* logo left, rest right */
+    align-items: center;
+    width: 100%;
+    padding:15px 0px;
+    margin: 0;
+    position: sticky;
+    top:0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background-color: #82de9b;
+}
+
+/* LOGO STYLING */
+.logo {
+    font-size:50px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    margin-left: 25px;
+    letter-spacing: 10px;
+    
+}
+
+/* RIGHT SIDE CONTAINER FOR BUTTONS + SEARCH */
+.menu-right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* MENU BUTTON GROUP */
+.menu-links {
+    display: flex;
+    gap: 25px;
+}
+
+/* INDIVIDUAL MENU BUTTONS */
+.menu-item {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 0;
+    transition: 0.2s;
+    letter-spacing: 3px;
+}
+
+.menu-item:hover {
+    transform: translateY(-2px);
+    text-decoration: underline;
+}
+
+/* SEARCH FORM */
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-form input {
+    padding: 8px 12px;
+    width: 180px;
+    border: 1px solid #000;
+    border-radius: 6px;
+}
+
+.search-form button {
+    padding: 8px 16px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background: gray;
+}
+
+body
+{   
+    padding: 0;
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color:#82de9b;
+}
+
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    color:white;
+    text-decoration: none;
+    background-color:black;
+    padding: 10px 0px;
+    border-radius:5px;
+    font-weight: bold;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    z-index: 9999;
+    
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 6px 12px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.pagination span {
+    margin: 0 5px;
+    padding: 6px 12px;
+    background-color: orange;
+    color: black;
+    border-radius: 4px;
+}
+.pagination a:hover {
+    background-color: gray;
+}
+
+
+.btn img {
+    margin-top: 10px;
+    margin-right: 10px;
+    color:black;
+    text-decoration: none;
+    border-radius: 5px;
+    padding:1px 5px 1px 5px;
+    width:30px;
+    height:30px ;
+    border-radius: 50%;
+}
+
+.btn 
+{
+    border:none;
+    text-decoration: none;
+}
+
+
+.banner {
+    background: #eafbe7;
+    border: 1px solid #1ca74a;
+    padding: 12px;
+    border-radius: 6px;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #1ca74a;
+    text-align: center;
+}
+
+.btn-small {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 4px 8px;
+    background: #1ca74a;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+}
